@@ -1,0 +1,30 @@
+query Task1{
+	user (username: String){
+		username
+		email
+		searchedForCounter
+		followers
+		followed
+	}
+}
+
+query Task2{
+	getUsers(order_by: {searchedForCounter: desc}, limit: 10){
+		username
+		email
+		searchedForCounter
+		followers
+		followed
+	}
+}
+
+mutation Task3{
+	mostPopular(_set: {searchedForCounter: 0}, where: {AND}){
+		username
+		email
+		searchedForCounter
+		followers
+		followed
+	}
+}
+	
